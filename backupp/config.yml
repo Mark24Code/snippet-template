@@ -1,0 +1,9 @@
+:setting: 
+  :path:
+    - '.'
+    - './snippet'
+
+:piplines:
+  :inset_react_files:
+    - :react
+    - :simple

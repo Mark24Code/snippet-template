@@ -1,12 +1,19 @@
 require 'erb'
 
-module ERBRender
-  def load_erb(template)
-    # TODO 约定目录搜索
-    return File.open("./snippet/#{template.to_s}.erb",'rb',&:read)
-  end
+tmp1 = %{
+  Tmp1
+}
 
-  def render(template, locals = {})
-    return ERB.new(self.load_erb(template)).result(binding)
-  end
+def render(template)
+  return ERB.new(template).result
+end
+class Prot
+
+
+
+tmp0 = %{
+  Hello <%= render(tmp1)%>
+}
+
+puts render(tmp0)
 end
