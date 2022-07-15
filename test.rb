@@ -4,7 +4,7 @@ class Demo
   include ERBRender
 
   def snippet
-    render(:react, { name: 'Actor'})
+    render(:react, {"name" => 'fff'})
   end
 
 end

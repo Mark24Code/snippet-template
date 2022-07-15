@@ -1,10 +1,11 @@
-setting: 
-  path:
+:setting: 
+  :path:
     - '.'
     - './snippet'
 
-slots:
-  react: 
-    dir: views
-    locals:
-      name: 'Actor'
+:jobs:
+  :react:
+    :file_name: "react.jsx"
+    :dir: views
+    :locals:
+      :name: 'Actor'
