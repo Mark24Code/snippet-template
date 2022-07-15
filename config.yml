@@ -1,0 +1,10 @@
+setting: 
+  path:
+    - '.'
+    - './snippet'
+
+slots:
+  react: 
+    dir: views
+    locals:
+      name: 'Actor'

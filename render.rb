@@ -7,6 +7,6 @@ module ERBRender
   end
 
   def render(template, locals = {})
-    return ERB.new(self.load_erb(template)).result(binding)
+    return ERB.new(self.load_erb(template)).result_with_hash(locals)
   end
 end
