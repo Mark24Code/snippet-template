@@ -1,4 +1,7 @@
 require 'erb'
+require_relative '../utils/string_patch'
+
+using StringPatch
 
 def render(opt)
   name = opt[:name]
@@ -49,7 +52,7 @@ module SnippetTemplate
     
         if search_path.instance_of? Array
           for try_path in search_path
-            f = Dir["#{try_path}/#{name.to_s}.rb"]
+            f = Dir["#{try_path}/#{name.to_s.snake_case}.rb"]
             if f.any?
               self.require_mod(f.first);
               break
@@ -73,7 +76,7 @@ module SnippetTemplate
   
     def result
       self.class.require_template(@name)
-      targetKls = Object.const_get("SnippetTemplate::#{@name.capitalize}")
+      targetKls = Object.const_get("SnippetTemplate::#{@name.camel_case}")
       node = targetKls.new(@props)
       template = node.view
       return ERB.new(template).result(node.get_binding)
