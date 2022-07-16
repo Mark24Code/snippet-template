@@ -111,3 +111,40 @@ Well, it will search snippet template within `config.snippet_path`.
 
 ### >>> conventional: the name of snippet template file and it's Class name must be same. To make sure we can find the correct snippet. <<<
 
+
+
+# CLI interface
+
+
+try to find help
+
+```
+$./scaffold.rb --help
+
+Usage: scaffold.rb [options]
+    -t, --template=Template          Choose snippet template
+    -p, --props=Props                Inject props data to template
+    -o, --output=Output              Inject files to output path
+```
+
+example
+
+```shell
+./scaffold.rb  -t react -p name:homepage,title:welcome -o dist/welcome.jsx
+```
+
+conventional:
+
+```
+--props  <key1>:<val1>,<key2>:<val2>, ....
+
+# will transfer to
+
+{
+  :key1: val1,
+  :key2: val2
+  ...
+}
+
+# then you can use in template
+```
