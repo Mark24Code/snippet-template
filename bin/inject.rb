@@ -18,7 +18,13 @@ module SnippetTemplate
     def start
       @jobs.each do |job|
         content = render({name: job[:snippet], props: job[:props]})
-        self.class.write_result(job[:output], content)
+        
+        output_path = job[:output]
+        output_dir = File.dirname(output_path)
+        if !File.directory?(output_dir)
+          system("mkdir -p #{output_dir}")
+        end
+        self.class.write_result(output_path, content)
       end
     end
   end
