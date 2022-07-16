@@ -1,6 +1,6 @@
 require './render'
 
-Snippet.configure do |config|
+SnippetTemplate::Snippet.configure do |config|
   config.snippet_path = './views' #['./snippet', './views']
 end
 

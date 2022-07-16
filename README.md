@@ -1,8 +1,11 @@
-# Template Snippet
+# Snippet Template 
 
-* Snippet Template 
-* Snippet Inject
-* Snippet Scaffold
+## features
+
+* Snippet Template Support (base on ERB)
+* Template can nest & import each other
+* Template support local state & Parent template inject props
+* Scaffold CMD interface support run cmd to inject files into project
 
 
 # Config
@@ -12,7 +15,7 @@
 example
 
 ```ruby
-Snippet.configure do |config|
+SnippetTemplate::Snippet.configure do |config|
   config.snippet_path = './snippet'
 end
 
