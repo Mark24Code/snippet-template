@@ -5,7 +5,7 @@
 * Snippet Template Support (base on ERB)
 * Template can nest & import each other
 * Template support local state & Parent template inject props
-* Scaffold CMD interface support run cmd to inject files into project
+* Scaffold CLI interface support run cmd to inject files into project
 
 
 # Config
