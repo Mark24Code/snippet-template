@@ -1,4 +1,4 @@
-require_relative '../render'
+require_relative '../bin/render'
 
 module SnippetTemplate
   class Demo < Template

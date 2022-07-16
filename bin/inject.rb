@@ -1,5 +1,5 @@
 
-require './render'
+require_relative './render'
 
 module SnippetTemplate
   class Inject

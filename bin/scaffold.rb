@@ -47,7 +47,7 @@ jobs = [
 ]
 
 SnippetTemplate::Snippet.configure do |config|
-  config.snippet_path = './snippet'
+  config.snippet_path = './views'
 end
 
 SnippetTemplate::Inject.new(jobs).start

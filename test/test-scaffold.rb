@@ -1,2 +1,2 @@
 system("rm ./dist/*")
-system("./scaffold.rb  -t  react -p name:homepage,title:welcome -o dist/welcome.jsx")
+system("./bin/scaffold.rb  -t  react -p name:homepage,title:welcome -o ./dist/welcome.jsx")
