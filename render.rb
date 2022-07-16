@@ -1,12 +1,6 @@
 require 'erb'
 
 module SnippetCommon
-  def write_result(output,content)
-    File.open("#{output}", 'w') { |f|
-      f << content
-    }
-  end
-
   # 思路2 使用类对象加载，这个更好可以减少重复加载
   # 利用ruby语言特效
   def require_template(name)
