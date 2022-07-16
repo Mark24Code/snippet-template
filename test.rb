@@ -16,4 +16,4 @@ require './render'
 #     end
 #   end
 # end
-puts render(:demo)
+puts render(:nick)

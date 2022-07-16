@@ -29,9 +29,9 @@ class Snippet
   def result
     require_template(@name)
     targetKls = Object.const_get("SnippetTemplate::#{@name.capitalize}")
-    template = targetKls.new.view
-
-    return ERB.new(template).result(self.get_binding)
+    node = targetKls.new
+    template = node.view
+    return ERB.new(template).result(node.get_binding)
   end
 
   def render(name)
@@ -57,4 +57,16 @@ end
 # end
 def render(name)
   Snippet.new(name).result
+end
+
+module SnippetTemplate
+  class Template
+    def get_binding
+      binding
+    end
+    
+    def view
+      
+    end
+  end
 end
