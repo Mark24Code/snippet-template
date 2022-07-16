@@ -16,4 +16,6 @@ require './render'
 #     end
 #   end
 # end
-puts render({name: :nick})
+
+# 最终寻找文件会转成字符串，所以这里是字符串也没关系
+puts render({name: 'nick'})
