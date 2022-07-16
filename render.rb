@@ -18,8 +18,9 @@ end
 class Snippet
   include SnippetCommon
 
-  def initialize(name)
+  def initialize(name, props)
     @name = name
+    @props = props
   end
 
   def get_binding
@@ -29,7 +30,7 @@ class Snippet
   def result
     require_template(@name)
     targetKls = Object.const_get("SnippetTemplate::#{@name.capitalize}")
-    node = targetKls.new
+    node = targetKls.new(@props)
     template = node.view
     return ERB.new(template).result(node.get_binding)
   end
@@ -58,11 +59,16 @@ end
 # end
 def render(opt)
   name = opt[:name]
-  Snippet.new(name).result
+  props = opt[:props] || {}
+  Snippet.new(name, props).result
 end
 
 module SnippetTemplate
   class Template
+    def initialize(props)
+      @props = props || {}
+    end
+
     def get_binding
       binding
     end
