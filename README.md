@@ -16,7 +16,7 @@ example
 
 ```ruby
 SnippetTemplate::Snippet.configure do |config|
-  config.snippet_path = './snippet'
+  config.snippet_path = './views'
 end
 
 ```
@@ -43,7 +43,7 @@ view template can access data from local instance attribute and props.
 
 
 ```ruby
-require_relative '../render'
+require_relative './bin/render'
 
 module SnippetTemplate
   class Demo < Template
@@ -68,7 +68,7 @@ end
 
 
 ```ruby
-require_relative '../render'
+require_relative './bin/render'
 
 module SnippetTemplate
   class Sub < Template
@@ -119,7 +119,7 @@ Well, it will search snippet template within `config.snippet_path`.
 try to find help
 
 ```
-$./scaffold.rb --help
+$./bin/scaffold.rb --help
 
 Usage: scaffold.rb [options]
     -t, --template=Template          Choose snippet template
@@ -130,7 +130,7 @@ Usage: scaffold.rb [options]
 example
 
 ```shell
-./scaffold.rb  -t react -p name:homepage,title:welcome -o dist/welcome.jsx
+./bin/scaffold.rb  -t react -p name:homepage,title:welcome -o dist/welcome.jsx
 ```
 
 conventional:
