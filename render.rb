@@ -34,7 +34,8 @@ class Snippet
     return ERB.new(template).result(node.get_binding)
   end
 
-  def render(name)
+  def render(opt)
+    name = opt[:name]
     self.class.new(name).result
   end
 end
@@ -55,7 +56,8 @@ end
 #     end
 #   end
 # end
-def render(name)
+def render(opt)
+  name = opt[:name]
   Snippet.new(name).result
 end
 

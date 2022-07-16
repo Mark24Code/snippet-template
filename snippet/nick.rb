@@ -12,7 +12,7 @@ module SnippetTemplate
     return %{
     <%= nick_name %> hello, I love <%= @food %>
     
-    <%= render(:hobby) %>
+    <%= render({name: :hobby}) %>
     }
     end
   end
