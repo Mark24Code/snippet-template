@@ -18,4 +18,11 @@ require './render'
 # end
 
 # 最终寻找文件会转成字符串，所以这里是字符串也没关系
-puts render({name: 'nick', props: { card_id: "1234" }})
+# puts render({name: 'nick', props: { card_id: "1234" }})
+
+
+
+
+
+
+puts render({name: 'react', props: { name: "homepage" }})
