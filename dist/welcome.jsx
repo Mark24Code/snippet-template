@@ -7,7 +7,7 @@ import Page from '~/hoc/page';
 })
 class Homepage extends React.Component {
   componentDidMount() {
-    window.document.title = "welcome"
+    window.document.title = "welcome";
   }
 
   render() {
