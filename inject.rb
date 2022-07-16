@@ -3,9 +3,7 @@ require './render'
 
 module SnippetTemplate
   class Inject
-    include InjectCommon
-
-    def << self
+    class << self
       def write_result(output,content)
         File.open("#{output}", 'w') { |f|
           f << content

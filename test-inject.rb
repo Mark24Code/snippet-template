@@ -8,4 +8,8 @@ jobs = [
   }
 ]
 
-Inject.new(jobs).start
+SnippetTemplate::Snippet.configure do |config|
+  config.snippet_path = './snippet'
+end
+
+SnippetTemplate::Inject.new(jobs).start
